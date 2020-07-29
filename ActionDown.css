@@ -1,0 +1,99 @@
+html,body{ margin:0; padding:0; }
+
+.effectDown{
+    animation: effDown 2s linear; 
+}
+@keyframes effDown {
+     
+     to{
+         transition: 1s;
+         opacity: 0;
+         transform: scaleY(-500px)
+     }
+}
+.container__down{
+    height: auto;
+    width: 100vw;
+    position: absolute; 
+    overflow: hidden;
+    overflow-y: hidden;
+    bottom: 0;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%; 
+    min-height: 100px; 
+    animation: traslateDown .5s linear;
+    transition: .4s;
+}
+@keyframes traslateDown {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;;
+    }
+}
+
+.container__down__body{
+    width: 100%;
+    transition: .3s;
+    display: inline-grid;
+    align-items: center;
+    justify-self: center; 
+    justify-content: space-between;
+    justify-items: center; 
+    grid-template-columns: 110px   auto auto;  
+     
+    background-color: rgb(39, 38, 38);
+    justify-content: center;
+     
+    align-items: center;
+    
+}  
+
+.container__down__header{
+    width: 100%;
+    background-color: rgb(53, 52, 52);
+    position: relative;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    padding-top: .2em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+} 
+.container__down__header__title {
+    color: #eee;
+    font-family: sans-serif;
+    margin-top: 1em;
+    font-weight: 600;
+    font-size: 17px;
+    
+}
+
+.container__down__body__item{
+    width: 50px;  
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px 20px; 
+    color: white;
+    font-family: arial;
+    height: 50px; 
+    border-radius: 50%; 
+    border: 1px solid rgba(148, 147, 147, 0.767);
+    animation: containerDownAnimation .8s linear;
+}
+@keyframes containerDownAnimation {
+    from{
+        transform: translateY(5px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(-0);
+        opacity: 1;
+    }
+   
+}
