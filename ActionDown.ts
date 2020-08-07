@@ -32,6 +32,11 @@ class ActionDown_{
         
         this.containerDownHeader.classList.add("container__down__header")
 
+        let closeHeader = document.createElement("ion-icon")
+        closeHeader.setAttribute("name", "close")
+        closeHeader.setAttribute("class", "closeDowns")
+        closeHeader.setAttribute("id", "closeDowns")
+        this.containerDownHeader.append(closeHeader)
         this.containerDownTitleHeader.classList.add("container__down__header__title")
         this.containerDown.append(this.containerDownHeader)
         this.containerDownHeader.append(this.containerDownTitleHeader)
@@ -80,12 +85,12 @@ class ActionDown_{
     
             }
     
-    
+          
             //container
             this.containerDown.classList.add("container__down")
             this.containerDownBody.classList.add("container__down__body")   
             document.body.append(this.containerDown)
-            
+
             let allItem = document.getElementById("containerDownBody") 
             let allItem2 = allItem.getElementsByClassName("container__down__body__item")
            
@@ -102,6 +107,11 @@ class ActionDown_{
                 })
     
             }
+            if (document.getElementById("closeDowns")){
+                document.getElementById("closeDowns").addEventListener("click", ()=>{
+                  this.removeDown() 
+                })
+            }
  
              
         }
@@ -115,9 +125,17 @@ class ActionDown_{
             document.getElementById("containerDown").remove()
         }, 1000)
         
-        document.getElementById("containerDown").style.transition="1s"
-        document.getElementById("containerDown").style.opacity="0";
-         
+
+
+        setTimeout(()=>{
+            
+            document.getElementById("containerDown").style.transition="1s"
+            document.getElementById("containerDown").style.transform="translateY(200px)"
+            document.getElementById("containerDown").style.opacity="0";
+            document.body.style.overflow="hidden";
+           
+        }, 300)
+        
     }
     
     
