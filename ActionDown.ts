@@ -32,11 +32,7 @@ class ActionDown_{
         
         this.containerDownHeader.classList.add("container__down__header")
 
-        let closeHeader = document.createElement("ion-icon")
-        closeHeader.setAttribute("name", "close")
-        closeHeader.setAttribute("class", "closeDowns")
-        closeHeader.setAttribute("id", "closeDowns")
-        this.containerDownHeader.append(closeHeader)
+      
         this.containerDownTitleHeader.classList.add("container__down__header__title")
         this.containerDown.append(this.containerDownHeader)
         this.containerDownHeader.append(this.containerDownTitleHeader)
@@ -118,20 +114,30 @@ class ActionDown_{
        
     }
 
+    public dismiss(){
+        if (document.getElementById("containerDown")) {
+            document.body.addEventListener("click", (e)=>{
+                this.removeDown()
+            })
+        }
+        else{
+            return 
+        }
+    }
 
     private removeDown(){
-
+        let removeDownReference =  document.getElementById("containerDown")
         setTimeout(()=>{
-            document.getElementById("containerDown").remove()
+            removeDownReference.remove()
         }, 1000)
         
 
 
         setTimeout(()=>{
-            
-            document.getElementById("containerDown").style.transition="1s"
-            document.getElementById("containerDown").style.transform="translateY(200px)"
-            document.getElementById("containerDown").style.opacity="0";
+
+            removeDownReference.style.transition=".4s"
+            removeDownReference.style.transform="translateY(300px)"
+            removeDownReference.style.opacity=".4";
             document.body.style.overflow="hidden";
            
         }, 300)
@@ -143,7 +149,8 @@ class ActionDown_{
 }
 
 
- 
+
 
 
 export const ActionDownController = new ActionDown_() 
+
