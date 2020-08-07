@@ -1,0 +1,19 @@
+{
+  "name": "Actiondownrbd12",
+  "version": "1.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremiasramirez/ActionDownController.git"
+  },
+  "author": "Jeremias ramirez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeremiasramirez/ActionDownController/issues"
+  },
+  "homepage": "https://github.com/jeremiasramirez/ActionDownController#readme"
+}
